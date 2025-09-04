@@ -56,3 +56,4 @@ Table Inventario {
   nombre varchar(100) [not null]
   cantidad_disponible numeric(10,2) [not null]
   unidad_medida varchar(20) [not null]
+}
