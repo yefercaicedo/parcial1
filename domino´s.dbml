@@ -22,10 +22,11 @@ Table Producto {
   precio numeric(8,2) [not null]
 }
 
-Table Reparto {
+Table Detalles_Reparto {
   id_producto int [not null, ref: > Producto.id_producto]
   hora_salida timestamp
-  hora_entrega timestamp
+  hora_entrega_estimada timestamp
+
 }
 
 Table Inventario {
@@ -34,4 +35,13 @@ Table Inventario {
   nombre varchar(100) [not null]
   cantidad_disponible numeric(10,2) [not null]
   unidad_medida varchar(20) [not null]
+}
+
+
+Table Detalles_Entrega {
+  id_producto int [not null, ref: > Detalles_Reparto.id_producto]
+  hora_entrega timestamp
+  persona_quien_recibe varchar(100)
+  firma_cliente varchar(100)
+  id_Detalles_Entrega serial [pk, not null]
 }
